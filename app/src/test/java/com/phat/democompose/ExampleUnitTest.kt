@@ -59,4 +59,30 @@ class ExampleUnitTest {
         assertEquals(2, solver.solution(intArrayOf(2, 2, 1, 1, 1, 2, 2)))
         assertEquals(5, solver.solution(intArrayOf(5)))
     }
+
+    @Test
+    fun testMoveZeroes() {
+        val solver = MoveZeroes()
+
+        val nums1 = intArrayOf(0, 1, 0, 3, 12)
+        solver.solution(nums1)
+        assertArrayEquals(intArrayOf(1, 3, 12, 0, 0), nums1)
+
+        val nums2 = intArrayOf(0)
+        solver.solution(nums2)
+        assertArrayEquals(intArrayOf(0), nums2)
+
+        val nums3 = intArrayOf(1, 2, 3)
+        solver.solution(nums3)
+        assertArrayEquals(intArrayOf(1, 2, 3), nums3)
+    }
+
+    @Test
+    fun testSortedSquares() {
+        val solver = SortedSquares()
+        
+        assertArrayEquals(intArrayOf(0, 1, 9, 16, 100), solver.solution(intArrayOf(-4, -1, 0, 3, 10)))
+        assertArrayEquals(intArrayOf(4, 9, 9, 49, 121), solver.solution(intArrayOf(-7, -3, 2, 3, 11)))
+        assertArrayEquals(intArrayOf(1, 4, 9), solver.solution(intArrayOf(1, 2, 3)))
+    }
 }
